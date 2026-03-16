@@ -16,9 +16,11 @@ LAMP stands for Linux, Apache, MySQL and PHP. A LAMP stack involves open source 
 
 For the text based browser, I installed w3m. I viewed the default web page from Chrome by using my server’s public IP address from Google Cloud. I created the web page with the following commands: 
 
-'cd /var/www/html/
+```
+cd /var/www/html/
 sudo mv index.html index.original.html
-sudo nano index.html'
+sudo nano index.html
+```
 
 **Verifying**
 
@@ -34,12 +36,14 @@ I used the systemctl command to confirm that apache2 was running correctly.
 
 **Configuration**
 
-'cd /etc/apache2/mods-available/
+```
+cd /etc/apache2/mods-available/
 sudo cp dir.conf dir.conf.bak
 sudo nano dir.conf
 DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
 sudo systemctl reload apache2
-systemctl status apache2'
+systemctl status apache2
+```
 
 **Verifying**
 
@@ -58,9 +62,10 @@ I used the systemctl status apache command to check for any errors in the log ou
 7. mysql --version
 8. systemctl status mysql
 
-**Configuration 
+**Configuration**
 
-'sudo mysql_secure_installation
+```
+sudo mysql_secure_installation
 * Validate passwords: Y
 * Password validation policy: 0 (zero) for LOW
 * Remove anonymous users: Y
@@ -69,11 +74,13 @@ I used the systemctl status apache command to check for any errors in the log ou
 * Reload privilege tables now: Y
 sudo mysql -u root
 mysql> show databases;
-mysql> \q'
+mysql> \q
+```
 
 **Verifying**
 
 To verify each component is working, I used the systemctl command and looked at the lines that started with “loaded” and “active.” I used the “show” and “describe” commands to confirm the table was created once I got to that point. Lastly, I used the following commands to test the PHP syntax for any errors:
+
 ```
 sudo php -f /var/www/login.php
 sudo php -f /var/www/html/opac.php
