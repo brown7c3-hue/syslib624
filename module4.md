@@ -1,8 +1,8 @@
-#Intro#
+# Intro
 
 LAMP stands for Linux, Apache, MySQL and PHP. A LAMP stack involves open source software that is used in the creation of websites and applications like WordPress and Koha. The only problems I encountered during this unit were user-error. I kept missing punctuation marks and making typos, which I can try to do better with moving forward by slowing down and double checking my work before entering any commands. 
 
-##Apache##
+## Apache
 
 **Installation**
 
@@ -24,7 +24,7 @@ sudo nano index.html'
 
 I used the systemctl command to confirm that apache2 was running correctly. 
 
-##PHP##
+## PHP
 
 **Installation**
 
@@ -45,7 +45,7 @@ systemctl status apache2'
 
 I used the systemctl status apache command to check for any errors in the log output after the php -v command. I verified PHP was installed correctly and that it was working with Apache by changing the directory to the document root (/var/www/html/) and created a nano file titled info.php. To confirm PHP is installed correctly, I opened my public IP address in my chosen browser (Chrome), and I saw the PHP title at the top of my screen. 
 
-##MySQL##
+## MySQL
 
 **Installation**
 
@@ -74,6 +74,7 @@ mysql> \q'
 **Verifying**
 
 To verify each component is working, I used the systemctl command and looked at the lines that started with “loaded” and “active.” I used the “show” and “describe” commands to confirm the table was created once I got to that point. Lastly, I used the following commands to test the PHP syntax for any errors:
-
-'sudo php -f /var/www/login.php
-sudo php -f /var/www/html/opac.php'
+```
+sudo php -f /var/www/login.php
+sudo php -f /var/www/html/opac.php
+```
