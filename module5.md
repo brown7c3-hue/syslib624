@@ -1,6 +1,6 @@
 # Introduction
 
-An Online Public Access Catalog (OPAC) is a tool used to search a library’s collection, which is managed by integrated library systems (ILS). An OPAC is created once a LAMP stack is established, as LAMP (Linux, Apache, MySQL, PHP) allow content management systems to function properly. In Module 5, I learned to create a very basic [OPAC] (http://35.188.18.102/mylibrary.html) as well as a [cataloging module] (http://35.188.18.102/cataloging/index.html). 
+An Online Public Access Catalog (OPAC) is a tool used to search a library’s collection, which is managed by integrated library systems (ILS). An OPAC is created once a LAMP stack is established, as LAMP (Linux, Apache, MySQL, PHP) allow content management systems to function properly. In Module 5, I learned to create a very basic [OPAC](http://35.188.18.102/mylibrary.html) as well as a [cataloging module](http://35.188.18.102/cataloging/index.html). 
 
 # Relational Database Structure
 
@@ -12,14 +12,14 @@ Relational databases are important tools as they are able to manage and retrieve
 
 To begin creating a basic OPAC, I started by updating my table with the following code: 
 
-`` 
+``` 
 mysql -u opacuser -p
 mysql> use opacdb;
 mysql> alter table books add publication_date date;
 mysql> update books set publication_date = str_to_date(concat(copyright, '-01-01'), '%Y-%m-%d');
 mysql> alter table books drop column copyright;
 mysql> alter table books change publication_date copyright date not null;
-``
+```
 
 Once the table was updated, I created a basic HTML page called mylibrary.html, which included a form for entering queries. A PHP script (search.php) is established after a user clicks submit on the form, and this establishes the connection to the OPAC database I created. 
 
@@ -30,12 +30,12 @@ An ILS is made up of the cataloging module as well as the following modules: acq
 
 I used the commands below to create a new directory and a new index.html file for my cataloging module:
 
-``
+```
 cd /var/www/html
 sudo mkdir cataloging
 cd cataloging
 sudo nano index.html
-``
+```
 
 ## Search and Retrieval
 
