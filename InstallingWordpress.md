@@ -2,12 +2,6 @@
 
 For this week’s assignment, I learned about WordPress, and I installed it on my virtual machine. My site is called “Caffeine County Library (Test Site),” which I named after an imaginary library I created for a collection development assignment I completed in another course. 
 
-```
-This is the working URL for my WordPress installation: 
-http://35.239.246.171/wordpress/
-
-```
-
 ## Documentation
 
 The first step I completed was making sure all requirements were met in terms of PHP (8.3 or greater) and MySQL (8.0 or greater) versions. 
